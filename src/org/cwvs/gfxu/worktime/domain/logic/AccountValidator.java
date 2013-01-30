@@ -1,6 +1,6 @@
 package org.cwvs.gfxu.worktime.domain.logic;
 
-import org.cwvs.gfxu.worktime.domain.Account;
+import org.cwvs.gfxu.worktime.domain.User;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -12,7 +12,7 @@ import org.springframework.validation.Validator;
 public class AccountValidator implements Validator {
 
 	public boolean supports(Class clazz) {
-		return Account.class.isAssignableFrom(clazz);
+		return User.class.isAssignableFrom(clazz);
 	}
 
 	public void validate(Object obj, Errors errors) {

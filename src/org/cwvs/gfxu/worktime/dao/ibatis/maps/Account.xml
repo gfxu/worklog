@@ -3,7 +3,7 @@
 
 <sqlMap namespace="Account">
 
-  <resultMap id="result" class="org.cwvs.gfxu.worktime.domain.Account">
+  <resultMap id="result" class="org.cwvs.gfxu.worktime.domain.User">
     <result property="username" column="userid" columnIndex="1"/>
     <result property="email" column="email" columnIndex="2"/>
     <result property="firstName" column="firstname" columnIndex="3"/>

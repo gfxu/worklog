@@ -1,4 +1,4 @@
-package org.cwvs.gfxu.worktime.service.client;
+/*package org.cwvs.gfxu.worktime.service.client;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.util.StopWatch;
 
-/**
+*//**
  * Demo client class for remote OrderServices, to be invoked as standalone
  * program from the command line, e.g. via "client.bat" or "run.xml".
  *
@@ -25,7 +25,7 @@ import org.springframework.util.StopWatch;
  * @author Juergen Hoeller
  * @since 26.12.2003
  * @see org.cwvs.gfxu.worktime.domain.logic.OrderService
- */
+ *//*
 public class OrderServiceClient {
 
 	public static final String CLIENT_CONTEXT_CONFIG_LOCATION = "clientContext.xml";
@@ -92,3 +92,4 @@ public class OrderServiceClient {
 	}
 
 }
+*/

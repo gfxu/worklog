@@ -2,7 +2,7 @@ package org.cwvs.gfxu.worktime.controller;
 
 import java.io.Serializable;
 
-import org.cwvs.gfxu.worktime.domain.Account;
+import org.cwvs.gfxu.worktime.domain.User;
 import org.springframework.beans.support.PagedListHolder;
 
 /**
@@ -11,15 +11,15 @@ import org.springframework.beans.support.PagedListHolder;
  */
 public class UserSession implements Serializable {
 
-	private Account account;
+	private User account;
 
 	private PagedListHolder myList;
 
-	public UserSession(Account account) {
+	public UserSession(User account) {
 		this.account = account;
 	}
 
-	public Account getAccount() {
+	public User getAccount() {
 		return account;
 	}
 

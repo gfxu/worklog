@@ -2,7 +2,7 @@ package org.cwvs.gfxu.worktime.controller;
 
 import java.io.Serializable;
 
-import org.cwvs.gfxu.worktime.domain.Account;
+import org.cwvs.gfxu.worktime.domain.User;
 
 /**
  * @author Juergen Hoeller
@@ -10,23 +10,23 @@ import org.cwvs.gfxu.worktime.domain.Account;
  */
 public class AccountForm implements Serializable {
 
-	private Account account;
+	private User account;
 
 	private boolean newAccount;
 
 	private String repeatedPassword;
 
-	public AccountForm(Account account) {
+	public AccountForm(User account) {
 		this.account = account;
 		this.newAccount = false;
 	}
 
 	public AccountForm() {
-		this.account = new Account();
+		this.account = new User();
 		this.newAccount = true;
 	}
 
-	public Account getAccount() {
+	public User getAccount() {
 		return account;
 	}
 

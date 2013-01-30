@@ -1,10 +1,10 @@
-package org.cwvs.gfxu.worktime.service;
+/*package org.cwvs.gfxu.worktime.service;
 
 import org.cwvs.gfxu.worktime.domain.Order;
 import org.cwvs.gfxu.worktime.domain.logic.OrderService;
 import org.springframework.remoting.jaxrpc.ServletEndpointSupport;
 
-/**
+*//**
  * JAX-RPC OrderService endpoint that simply delegates to the OrderService
  * implementation in the root web application context. Implements the plain
  * OrderService interface as service interface, just like the target bean does.
@@ -35,7 +35,7 @@ import org.springframework.remoting.jaxrpc.ServletEndpointSupport;
  *
  * @author Juergen Hoeller
  * @since 26.12.2003
- */
+ *//*
 public class JaxRpcOrderService extends ServletEndpointSupport implements OrderService {
 
 	private OrderService orderService;
@@ -49,3 +49,4 @@ public class JaxRpcOrderService extends ServletEndpointSupport implements OrderS
 	}
 
 }
+*/

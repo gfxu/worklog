@@ -3,7 +3,7 @@ package org.cwvs.gfxu.worktime.dao.ibatis;
 import java.util.List;
 
 import org.cwvs.gfxu.worktime.dao.AccountDao;
-import org.cwvs.gfxu.worktime.domain.Account;
+import org.cwvs.gfxu.worktime.domain.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
 
@@ -25,27 +25,27 @@ import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
  */
 public class SqlMapAccountDao extends SqlMapClientDaoSupport implements AccountDao {
 
-  public Account getAccount(String username) throws DataAccessException {
-    return (Account) getSqlMapClientTemplate().queryForObject("getAccountByUsername", username);
+  public User getAccount(String username) throws DataAccessException {
+    return (User) getSqlMapClientTemplate().queryForObject("getAccountByUsername", username);
   }
 
-  public Account getAccount(String username, String password) throws DataAccessException {
-    Account account = new Account();
-    account.setUsername(username);
-    account.setPassword(password);
-    return (Account) getSqlMapClientTemplate().queryForObject("getAccountByUsernameAndPassword", account);
+  public User getAccount(String username, String password) throws DataAccessException {
+    User account = new User();
+    account.setUserName(username);
+    account.setPassWord(password);
+    return (User) getSqlMapClientTemplate().queryForObject("getAccountByUsernameAndPassword", account);
   }
 
-  public void insertAccount(Account account) throws DataAccessException {
+  public void insertAccount(User account) throws DataAccessException {
     getSqlMapClientTemplate().insert("insertAccount", account);
     getSqlMapClientTemplate().insert("insertProfile", account);
     getSqlMapClientTemplate().insert("insertSignon", account);
   }
 
-  public void updateAccount(Account account) throws DataAccessException {
+  public void updateAccount(User account) throws DataAccessException {
     getSqlMapClientTemplate().update("updateAccount", account, 1);
     getSqlMapClientTemplate().update("updateProfile", account, 1);
-    if (account.getPassword() != null && account.getPassword().length() > 0) {
+    if (account.getPassWord() != null && account.getPassWord().length() > 0) {
       getSqlMapClientTemplate().update("updateSignon", account, 1);
     }
   }
