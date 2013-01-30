@@ -91,19 +91,6 @@
 	</servlet>
 
 	<!--
-		- Struts servlet that dispatches requests to registered actions.
-		- Reads its configuration from "struts-config.xml".
-		-
-		- A web app can just contain one such servlet.
-		- If you need multiple namespaces, use Struts' module mechanism.
-	-->
-	<servlet>
-		<servlet-name>action</servlet-name>
-		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
-		<load-on-startup>3</load-on-startup>
-	</servlet>
-
-	<!--
 		- Dispatcher servlet definition for HTTP remoting via Hessian, Burlap, and
 		- Spring's HTTP invoker (see remoting-servlet.xml for the controllers).
 	-->
@@ -133,9 +120,7 @@
 	-->
 	<servlet-mapping>
 		<servlet-name>worklog</servlet-name>
-		<!--<servlet-name>action</servlet-name>
-		-->
-		
+
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
@@ -158,11 +143,7 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<!-- 
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>/WEB-INF/jsp/struts/index.jsp</welcome-file>
-		 -->
-		<welcome-file>/WEB-INF/jsp/spring/index.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<!--
