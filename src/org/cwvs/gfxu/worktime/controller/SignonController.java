@@ -1,4 +1,4 @@
-package org.cwvs.gfxu.worktime.controller;
+/*package org.cwvs.gfxu.worktime.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,10 +12,10 @@ import org.springframework.beans.support.PagedListHolder;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-/**
+*//**
  * @author Juergen Hoeller
  * @since 30.11.2003
- */
+ *//*
 public class SignonController implements Controller {
 
 	private static Logger logger = LoggerFactory.getLogger(SignonController.class);
@@ -36,7 +36,7 @@ public class SignonController implements Controller {
 		}
 		else {
 			UserSession userSession = new UserSession(account);
-			PagedListHolder myList = new PagedListHolder(/*this.petStore.getProductListByCategory(account.getFavouriteCategoryId())*/);
+			PagedListHolder myList = new PagedListHolder(this.petStore.getProductListByCategory(account.getFavouriteCategoryId()));
 			myList.setPageSize(4);
 			userSession.setMyList(myList);
 			request.getSession().setAttribute("userSession", userSession);
@@ -52,3 +52,4 @@ public class SignonController implements Controller {
 	}
 
 }
+*/
