@@ -10,11 +10,11 @@ if exists table shedule then drop table shedule end
 create table users 
 (
    id                   bigint                        not null,
-   user_name[用户名]       varchar(20)                    null,
-   passwd[密码]           varchar(20)                    null,
+   user_name      varchar(20)                    null,
+   passwd           varchar(20)                    null,
    real_name            varchar(20)                    null,
    role                 bigint                         null,
-   lastLogin[最近登录]      datetime                       null,
+   lastLogin      datetime                       null,
    status               smallint                       null,
    del_flg              char                           null,
    constraint PK_USERS primary key ()
@@ -39,7 +39,7 @@ create table project
 (
    id                   bigint                         not null,
    project_name         varchar(20)                    null,
-   project_manager[项目经理] bigint                         null,
+   project_manager bigint                         null,
    status               smallint                       null,
    del_flg              char                           null,
    constraint PK_PROJECT primary key clustered (id)
@@ -56,14 +56,14 @@ create table project_plan
    s_time               datetime                       null,
    e_time               datetime                       null,
    milestone            varchar(30)                    null,
-   "comment"            varchar(100)                   null,
+   comment            varchar(100)                   null,
    constraint PK_PROJECT_PLAN primary key clustered (id)
 );
 
 /*==============================================================*/
 /* Table: shedule                                               */
 /*==============================================================*/
-create table shedule 
+create table schedule 
 (
    id                   bigint                         not null,
    name                 varchar(20)                    null,
@@ -75,5 +75,5 @@ create table shedule
    p_e_time             datetime                       null,
    a_s_time             datetime                       null,
    a_e_time             datetime                       null,
-   constraint PK_SHEDULE primary key clustered (id)
+   constraint PK_SCHEDULE primary key clustered (id)
 );

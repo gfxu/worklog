@@ -1,9 +1,8 @@
 package org.cwvs.gfxu.worktime.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class User extends BaseDomain{
 
 	private static final long serialVersionUID = -7034999285667550164L;
 	
@@ -13,9 +12,6 @@ public class User implements Serializable {
 	private String realName;
 	private String roleId;     
 	private Date lastLogin;
-	private Integer status;   
-	private Character delFlg;
-	
 	
 	public Long getId() {
 		return id;
@@ -53,18 +49,5 @@ public class User implements Serializable {
 	public void setLastLogin(Date lastLogin) {
 		this.lastLogin = lastLogin;
 	}
-	public Integer getStatus() {
-		return status;
-	}
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-	public Character getDelFlg() {
-		return delFlg;
-	}
-	public void setDelFlg(Character delFlg) {
-		this.delFlg = delFlg;
-	}  
-
 	
 }
