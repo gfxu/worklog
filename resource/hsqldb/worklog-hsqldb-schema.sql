@@ -1,79 +1,64 @@
-if exists table users then drop table users end
-if exists table role then drop table role end
-if exists table project then drop table project end
-if exists table project_plan then drop table project_plan end
-if exists table shedule then drop table shedule end
+drop table if exists users;
+drop table if exists role;
+drop table if exists project;
+drop table if exists project_plan;
+drop table if exists schedule;
 
-/*==============================================================*/
-/* Table: users                                                 */
-/*==============================================================*/
 create table users 
 (
-   id                   bigint                        not null,
-   user_name      varchar(20)                    null,
-   passwd           varchar(20)                    null,
-   real_name            varchar(20)                    null,
-   role                 bigint                         null,
-   lastLogin      datetime                       null,
-   status               smallint                       null,
-   del_flg              char                           null,
-   constraint PK_USERS primary key ()
+   id int not null,
+   user_name varchar(20) null,
+   passwd varchar(20) null,
+   real_name varchar(20) null,
+   role int null,
+   lastLogin date null,
+   status int null,
+   del_flg char null,
+   constraint PK_USERS primary key (id)
 );
 
-/*==============================================================*/
-/* Table: role                                                  */
-/*==============================================================*/
 create table role 
 (
-   id                   bigint                         not null,
-   name                 varchar(20)                    null,
-   status               smallint                       null,
-   del_flg              char                           null,
-   constraint PK_ROLE primary key clustered (id)
+   id int not null,
+   name varchar(20) null,
+   status int null,
+   del_flg char null,
+   constraint PK_ROLE primary key (id)
 );
 
-/*==============================================================*/
-/* Table: project                                               */
-/*==============================================================*/
 create table project 
 (
-   id                   bigint                         not null,
-   project_name         varchar(20)                    null,
-   project_manager bigint                         null,
-   status               smallint                       null,
-   del_flg              char                           null,
-   constraint PK_PROJECT primary key clustered (id)
+   id int not null,
+   project_name varchar(20) null,
+   project_manager int null,
+   status int null,
+   del_flg char null,
+   constraint PK_PROJECT primary key  (id)
 );
 
 
-/*==============================================================*/
-/* Table: project_plan                                          */
-/*==============================================================*/
 create table project_plan 
 (
-   id                   bigint                         not null,
-   project              bigint                         null,
-   s_time               datetime                       null,
-   e_time               datetime                       null,
-   milestone            varchar(30)                    null,
-   comment            varchar(100)                   null,
-   constraint PK_PROJECT_PLAN primary key clustered (id)
+   id int not null,
+   project  int null,
+   s_time   date  null,
+   e_time   date  null,
+   milestone   varchar(30)  null,
+   comment   varchar(100) null,
+   constraint PK_PROJECT_PLAN primary key (id)
 );
 
-/*==============================================================*/
-/* Table: shedule                                               */
-/*==============================================================*/
 create table schedule 
 (
-   id                   bigint                         not null,
-   name                 varchar(20)                    null,
-   comment              varchar(100)                   null,
-   project_plan         bigint                         null,
-   coder                bigint                         null,
-   tester               bigint                         null,
-   p_s_time             datetime                       null,
-   p_e_time             datetime                       null,
-   a_s_time             datetime                       null,
-   a_e_time             datetime                       null,
-   constraint PK_SCHEDULE primary key clustered (id)
+   id int not null,
+   name  varchar(20) null,
+   comment  varchar(100) null,
+   project_plan   int null,
+   coder int null,
+   tester   int null,
+   p_s_time date  null,
+   p_e_time date  null,
+   a_s_time date  null,
+   a_e_time date  null,
+   constraint PK_SCHEDULE primary key (id)
 );

@@ -1,1 +1,1 @@
-java -classpath ../../../../lib/hsqldb/hsqldb.jar org.hsqldb.Server -database worklog
+java -classpath  hsqldb.jar org.hsqldb.Server -database worklog
