@@ -1,5 +1,12 @@
 package org.cwvs.gfxu.worktime.dao.ibatis;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.cwvs.gfxu.worktime.dao.AccountDao;
@@ -52,6 +59,42 @@ public class SqlMapAccountDao extends SqlMapClientDaoSupport implements AccountD
  
 	public List getUsernameList() throws DataAccessException {
 		return getSqlMapClientTemplate().queryForList("getUsernameList", null);
+	}
+	
+	public static void main(String[] args) 
+	{
+		try {
+			Class.forName("org.hsqldb.jdbcDriver");
+			Connection c;
+			try {
+				c = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:9002", "sa", "");
+			
+				String sql = "select * from users";
+				PreparedStatement st = c.prepareStatement(sql);
+				
+				ResultSet resultSet = st.executeQuery();
+				//resultSet.setFetchSize(10);
+				while(resultSet.next())
+				{
+					ResultSetMetaData md = resultSet.getMetaData();
+					int count = md.getColumnCount();
+					StringBuffer sb = new StringBuffer("");
+					for(int i=1;i<=count;i++)
+					{
+						String columnName = md.getColumnName(i);
+						sb.append(columnName);
+						sb.append(":");
+						sb.append(resultSet.getString(i));
+						sb.append(" ");
+					}
+					System.out.println(sb);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
